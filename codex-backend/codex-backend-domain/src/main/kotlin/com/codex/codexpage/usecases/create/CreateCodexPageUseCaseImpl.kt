@@ -1,7 +1,7 @@
-package com.codex.page.usecases.create
+package com.codex.codexpage.usecases.create
 
-import com.codex.page.entities.CodexPage
-import com.codex.page.repositories.CodexPageRepository
+import com.codex.codexpage.entities.CodexPage
+import com.codex.codexpage.repositories.CodexPageRepository
 import java.util.*
 
 class CreateCodexPageUseCaseImpl(val codexPageRepository: CodexPageRepository) : CreateCodexPageUseCase {

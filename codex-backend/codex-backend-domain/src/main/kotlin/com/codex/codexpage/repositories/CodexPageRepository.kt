@@ -1,6 +1,6 @@
-package com.codex.page.repositories
+package com.codex.codexpage.repositories
 
-import com.codex.page.entities.CodexPage
+import com.codex.codexpage.entities.CodexPage
 
 interface CodexPageRepository {
 
