@@ -1,8 +1,8 @@
-package com.codex.mongodb.kmongo
+package com.codex.infrastructures.mongodb.kmongo
 
 import com.codex.models.CodexModel
-import com.codex.mongodb.MongoRepository
-import com.codex.mongodb.exceptions.*
+import com.codex.infrastructures.mongodb.MongoRepository
+import com.codex.infrastructures.mongodb.exceptions.*
 import com.mongodb.client.MongoCollection
 import org.litote.kmongo.eq
 import org.litote.kmongo.findOne

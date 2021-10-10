@@ -1,4 +1,4 @@
-package com.codex.mongodb
+package com.codex.infrastructures.mongodb
 
 import com.codex.models.CodexModel
 

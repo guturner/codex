@@ -1,3 +1,7 @@
 package com.codex.codexpage.models
 
-data class CodexPageModel()
+import com.codex.models.CodexModel
+
+data class CodexPageModel(override val id: String, val title: String) : CodexModel {
+
+}
