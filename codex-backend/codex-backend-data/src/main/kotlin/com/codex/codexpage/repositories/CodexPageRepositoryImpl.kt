@@ -1,16 +1,33 @@
 package com.codex.codexpage.repositories
 
 import com.codex.codexpage.entities.CodexPage
+import com.codex.codexpage.mappers.asCodexPage
+import com.codex.codexpage.mappers.asCodexPageModel
+import com.codex.codexpage.models.CodexPageModel
+import com.codex.infrastructures.mongodb.kmongo.KMongoRepository
+import com.mongodb.client.MongoClient
+import com.mongodb.client.MongoCollection
+import org.litote.kmongo.getCollection
 
-class CodexPageRepositoryImpl : CodexPageRepository {
+class CodexPageRepositoryImpl(client: MongoClient) : KMongoRepository<CodexPageModel>(), CodexPageRepository {
+
+    override lateinit var collection: MongoCollection<CodexPageModel>
+
+    init {
+        val database = client.getDatabase("codexdb")
+        collection = database.getCollection<CodexPageModel>("codexpages")
+    }
 
     override fun save(codexPage: CodexPage): CodexPage {
-        // TODO: Replace mock
-        return codexPage
+        val codexPageModel = asCodexPageModel(codexPage)
+        val savedCodexPageModel: CodexPageModel = save(codexPageModel)
+
+        return asCodexPage(savedCodexPageModel)
     }
 
     override fun getCodexPageByPageId(pageId: String): CodexPage {
-        // TODO: Replace mock
-        return CodexPage(pageId, "MockTitle")
+        val foundCodexPageModel = getById(pageId)
+
+        return asCodexPage(foundCodexPageModel)
     }
 }
