@@ -3,16 +3,16 @@ package com.codex.codexpage.mappers
 import com.codex.codexpage.entities.CodexPage
 import com.codex.codexpage.models.CodexPageModel
 
-fun asCodexPageModel(codexPage: CodexPage): CodexPageModel {
+fun CodexPage.asCodexPageModel(): CodexPageModel {
     return CodexPageModel(
-            id = codexPage.pageId,
-            title = codexPage.title
+            id = this.pageId,
+            title = this.title
     )
 }
 
-fun asCodexPage(codexPageModel: CodexPageModel): CodexPage {
+fun CodexPageModel.asCodexPage(): CodexPage {
     return CodexPage(
-            pageId = codexPageModel.id,
-            title = codexPageModel.title
+            pageId = this.id,
+            title = this.title
     )
 }

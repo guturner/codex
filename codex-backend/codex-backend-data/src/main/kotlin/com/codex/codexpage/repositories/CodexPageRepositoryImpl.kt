@@ -19,15 +19,15 @@ class CodexPageRepositoryImpl(client: MongoClient) : KMongoRepository<CodexPageM
     }
 
     override fun save(codexPage: CodexPage): CodexPage {
-        val codexPageModel = asCodexPageModel(codexPage)
+        val codexPageModel = codexPage.asCodexPageModel()
         val savedCodexPageModel: CodexPageModel = save(codexPageModel)
 
-        return asCodexPage(savedCodexPageModel)
+        return savedCodexPageModel.asCodexPage()
     }
 
     override fun getCodexPageByPageId(pageId: String): CodexPage {
         val foundCodexPageModel = getById(pageId)
 
-        return asCodexPage(foundCodexPageModel)
+        return foundCodexPageModel.asCodexPage()
     }
 }
