@@ -1,6 +1,7 @@
-**.gradle/
+.cache
+.gradle
+.idea
 
-**idea/
-**build/
-
-**node_modules
+build
+node_modules
+public
