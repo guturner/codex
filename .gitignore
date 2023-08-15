@@ -1,0 +1,9 @@
+### JVM ###
+build/
+
+### Gradle ###
+.gradle
+
+### IntelliJ IDEA ###
+.idea
+out/
