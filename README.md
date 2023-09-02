@@ -13,7 +13,7 @@ Demonstrates knowledge of:
 - TypeScript
 
 # Getting Started
-- Follow the README under `codex-dev-tools`: COMING SOON
+- Follow the README under `codex-dev-tools`
 - Start the Codex Backend:
   - Run `:codex-api/io.guy.home.codex.api.CodexApplication.kt`
   - Visit [http://localhost:8080/health](http://localhost:8080/health) to validate.

@@ -7,3 +7,6 @@ build/
 ### IntelliJ IDEA ###
 .idea
 out/
+
+### Tools ###
+codex-dev-tools/mongodb
