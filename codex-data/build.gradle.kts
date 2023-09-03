@@ -23,12 +23,18 @@ repositories {
 dependencies {
 	api(project(":codex-domain"))
 
-	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+	implementation("org.slf4j:slf4j-api:2.0.5")
+	implementation("ch.qos.logback:logback-core:1.4.7")
+	implementation("ch.qos.logback:logback-classic:1.4.7")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 
+	api("org.springframework.boot:spring-boot-starter-data-mongodb")
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.testcontainers:testcontainers:1.19.0")
+	testImplementation("org.testcontainers:mongodb:1.19.0")
+	testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,7 +1,9 @@
 package io.guy.home.codex.data.codexpages.models
 
-import java.util.UUID
+import org.springframework.data.mongodb.core.index.Indexed
+import org.springframework.data.mongodb.core.mapping.Document
 
+@Document("codexpages")
 data class CodexPageModel(
-    val codexPageId: UUID,
+    @Indexed(unique = true) val codexPageId: String,
     val title: String)

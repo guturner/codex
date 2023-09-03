@@ -6,4 +6,5 @@ import java.util.UUID
 interface CodexPageRepository {
 
     fun lookupOneCodexPageByCodexPageId(codexPageId: UUID): CodexPage?
+    fun saveCodexPage(codexPage: CodexPage): CodexPage
 }
