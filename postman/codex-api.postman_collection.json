@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "fec60004-bfba-49ca-a37b-a890940db423",
+		"name": "codex-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Codex Page",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Hello World\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/codexPages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"codexPages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Codex Page by codexPageId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/codexPages/{{codexPageId}} ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"codexPages",
+						"{{codexPageId}} "
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "codexPageId",
+			"value": "a769e132-5265-4feb-98fb-94df65eb0718"
+		}
+	]
+}
