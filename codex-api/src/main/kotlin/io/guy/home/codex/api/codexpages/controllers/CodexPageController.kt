@@ -1,9 +1,9 @@
 package io.guy.home.codex.api.codexpages.controllers
 
-import com.mongodb.MongoWriteException
 import io.guy.home.codex.api.codexpages.mappers.toCodexPageResponse
 import io.guy.home.codex.api.codexpages.models.CreateCodexPageRequest
-import io.guy.home.codex.api.codexpages.models.CreateCodexPageResponse
+import io.guy.home.codex.api.common.response.failure
+import io.guy.home.codex.api.common.response.success
 import io.guy.home.codex.domain.codexpages.usecases.CreateCodexPageUseCase
 import io.guy.home.codex.domain.codexpages.usecases.LookupCodexPageUseCase
 import org.springframework.http.ResponseEntity
@@ -21,24 +21,22 @@ class CodexPageController(
         val codexPage = lookupCodexPageUseCase.lookupOneCodexPageByCodexPageId(codexPageId)
 
         return if (codexPage == null) {
-            ResponseEntity.notFound().build()
+            ResponseEntity.status(404).body(
+                failure(mapOf("codexPageId" to codexPageId.toString()), "CodexPage with codexPageId=$codexPageId not found.")
+            )
         } else {
-            ResponseEntity.ok(
-                codexPage.toCodexPageResponse())
+            ResponseEntity.status(200).body(
+                success(codexPage.toCodexPageResponse())
+            )
         }
     }
 
     @PostMapping("/api/v1/codexPages")
     fun createCodexPage(@RequestBody createCodexPageRequest: CreateCodexPageRequest): ResponseEntity<Any> {
+        val codexPage = createCodexPageUseCase.createCodexPage(createCodexPageRequest.title)
 
-        return try {
-            val codexPage = createCodexPageUseCase.createCodexPage(createCodexPageRequest.title)
-
-            ResponseEntity.status(201).body(
-                CreateCodexPageResponse(
-                    codexPage = codexPage.toCodexPageResponse()))
-        } catch(ex: MongoWriteException) {
-            ResponseEntity.status(409).build()
-        }
+        return ResponseEntity.status(201).body(
+            success(codexPage.toCodexPageResponse())
+        )
     }
 }
