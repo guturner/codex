@@ -10,3 +10,6 @@ out/
 
 ### Tools ###
 codex-dev-tools/mongodb
+
+### React ###
+node_modules/

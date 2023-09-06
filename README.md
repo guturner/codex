@@ -4,6 +4,7 @@ A suite of world building tools for writers or dungeon masters.
 # Intro
 Demonstrates knowledge of:
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Gatsby](https://www.gatsbyjs.com/)
 - Gradle
 - [Java TestContainers](https://java.testcontainers.org/)
 - JUnit 5
@@ -20,7 +21,7 @@ Demonstrates knowledge of:
   - Run `/codex-api/io.guy.home.codex.api.CodexApplication.kt`
   - Visit [http://localhost:8080/health](http://localhost:8080/health) to validate.
 - Start the Codex Frontend:
-  - COMING SOON
+  - Follow the README under `/codex-ui`
 
 # Architecture
 Codex's architecture is based off of Robert Martin's [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
