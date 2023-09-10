@@ -4,6 +4,7 @@ A suite of world building tools for writers or dungeon masters.
 # Intro
 Demonstrates knowledge of:
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [Gatsby](https://www.gatsbyjs.com/)
 - Gradle
 - [Java TestContainers](https://java.testcontainers.org/)
 - JUnit 5
