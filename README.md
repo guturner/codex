@@ -8,6 +8,7 @@ Demonstrates knowledge of:
 - [Java TestContainers](https://java.testcontainers.org/)
 - JUnit 5
 - Kotlin
+- [Material UI](https://mui.com/)
 - MongoDB
 - [Postman](https://www.postman.com/product/what-is-postman/)
 - React
@@ -20,7 +21,7 @@ Demonstrates knowledge of:
   - Run `/codex-api/io.guy.home.codex.api.CodexApplication.kt`
   - Visit [http://localhost:8080/health](http://localhost:8080/health) to validate.
 - Start the Codex Frontend:
-  - COMING SOON
+  - Follow the README under `/codex-ui`
 
 # Architecture
 Codex's architecture is based off of Robert Martin's [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
