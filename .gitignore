@@ -10,3 +10,6 @@ out/
 
 ### Tools ###
 codex-dev-tools/mongodb
+
+### Node ###
+node_modules/
