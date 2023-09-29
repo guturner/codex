@@ -31,6 +31,16 @@ class CodexPageController(
         }
     }
 
+    @GetMapping("/api/v1/codexPages")
+    fun getCodexPages(): ResponseEntity<Any> {
+
+        val codexPages = lookupCodexPageUseCase.lookupAllCodexPages()
+
+        return ResponseEntity.status(200).body(
+            success(codexPages)
+        )
+    }
+
     @PostMapping("/api/v1/codexPages")
     fun createCodexPage(@RequestBody createCodexPageRequest: CreateCodexPageRequest): ResponseEntity<Any> {
         val codexPage = createCodexPageUseCase.createCodexPage(createCodexPageRequest.title)

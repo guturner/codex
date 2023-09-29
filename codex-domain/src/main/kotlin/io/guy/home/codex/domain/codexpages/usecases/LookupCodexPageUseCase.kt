@@ -10,4 +10,8 @@ class LookupCodexPageUseCase(
     fun lookupOneCodexPageByCodexPageId(codexPageId: UUID): CodexPage? {
         return codexPageRepository.lookupOneCodexPageByCodexPageId(codexPageId)
     }
+
+    fun lookupAllCodexPages(): Sequence<CodexPage> {
+        return codexPageRepository.lookupAllCodexPages()
+    }
 }

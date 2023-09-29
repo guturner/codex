@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "fec60004-bfba-49ca-a37b-a890940db423",
 		"name": "codex-api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30135950"
 	},
 	"item": [
 		{
@@ -41,7 +42,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/v1/codexPages/{{codexPageId}} ",
+					"raw": "http://localhost:8080/api/v1/codexPages/{{codexPageId}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -51,11 +52,52 @@
 						"api",
 						"v1",
 						"codexPages",
-						"{{codexPageId}} "
+						"{{codexPageId}}"
 					]
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Get All Codex Pages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/codexPages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"codexPages"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"variable": [
