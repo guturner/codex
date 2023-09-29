@@ -28,8 +28,8 @@ export default function Header() {
 
             {
               pages.map( (page) => 
-                <Link to={page.url}>
-                  <Button key={page.key} sx={{ my: 2, ml: 1, color: 'white' }}>
+                <Link to={page.url} key={`${page.key}-link`}>
+                  <Button key={`${page.key}-button`} sx={{ my: 2, ml: 1, color: 'white' }}>
                     {page.title}
                   </Button>
                 </Link>
